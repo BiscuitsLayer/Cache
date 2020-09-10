@@ -13,7 +13,9 @@ bool operator < (Time lhs, Time rhs);
 template <typename Key>
 class CompareTime {
     public:
-        bool operator () (std::pair <Time, Key> const& lhs, std::pair <Time, Key> const& rhs);
+        bool operator () (std::pair <Time, Key> const& lhs, std::pair <Time, Key> const& rhs) {
+            return lhs.first < rhs.first;
+        }
 };
 
 #endif
